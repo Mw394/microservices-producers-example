@@ -13,4 +13,9 @@ public class SmsSender implements MessageSender{
     public void sendMessage(String message) {
         System.out.print(prefix + " " + message);
     }
+
+    @Override
+    public void close() {
+
+    }
 }

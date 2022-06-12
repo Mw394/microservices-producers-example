@@ -12,4 +12,9 @@ public class EmailSender implements MessageSender{
     public void sendMessage(String message) {
         System.out.print(prefix + " " + message);
     }
+
+    @Override
+    public void close() {
+
+    }
 }

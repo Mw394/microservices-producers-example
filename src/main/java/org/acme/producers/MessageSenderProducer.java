@@ -5,12 +5,14 @@ import org.acme.domain.MessageSender;
 import org.acme.domain.SmsSender;
 import org.acme.domain.UnknownSender;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Disposes;
 import javax.inject.Inject;
 import javax.ws.rs.Produces;
 
 
-
+@ApplicationScoped
 public class MessageSenderProducer {
 
     @Inject
@@ -32,5 +34,10 @@ public class MessageSenderProducer {
         } else {
             return new UnknownSender("UNKNOWN");
         }
+    }
+
+    public void closeSender(@Disposes MessageSender sender) {
+        System.out.println("DISPOSES");
+        sender.close();
     }
 }
