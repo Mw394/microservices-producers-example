@@ -2,8 +2,6 @@ package org.acme.resource;
 
 import org.acme.resource.DTO.MessageDTO;
 import org.acme.service.MessageService;
-
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -11,7 +9,6 @@ import javax.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @Path("/message")
-@Dependent
 public class MessageResource {
 
 
